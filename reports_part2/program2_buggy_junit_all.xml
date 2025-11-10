@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="8" time="0.038" timestamp="2025-11-10T14:13:18.470699-05:00" hostname="Tasmiyas-MacBook-Pro.local"><testcase classname="part2_tests.tests_iteration_0.test_student_grade_analysis" name="test_student_grade_analysis_1" time="0.000" /><testcase classname="part2_tests.tests_iteration_0.test_student_grade_analysis" name="test_student_grade_analysis_2" time="0.000" /><testcase classname="part2_tests.tests_iteration_0.test_student_grade_analysis" name="test_student_grade_analysis_3" time="0.000" /><testcase classname="part2_tests.tests_iteration_0.test_student_grade_analysis" name="test_student_grade_analysis_4" time="0.000" /><testcase classname="part2_tests.tests_iteration_0.test_student_grade_analysis" name="test_student_grade_analysis_5" time="0.000" /><testcase classname="part2_tests.tests_iteration_0.test_student_grade_analysis" name="test_student_grade_analysis_6" time="0.000" /><testcase classname="part2_tests.tests_iteration_0.test_student_grade_analysis" name="test_student_grade_analysis_7" time="0.001"><failure message="AssertionError: assert [('Alice', 'Merit')] == [('Alice', 'Distinction')]&#10;  &#10;  At index 0 diff: ('Alice', 'Merit') != ('Alice', 'Distinction')&#10;  &#10;  Full diff:&#10;    [&#10;        (&#10;            'Alice',...&#10;  &#10;  ...Full output truncated (4 lines hidden), use '-vv' to show">def test_student_grade_analysis_7():
+        students = [("Alice", 90, 80)]
+&gt;       assert student_grade_analysis(students) == [("Alice", "Distinction")]  # FAILS
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: assert [('Alice', 'Merit')] == [('Alice', 'Distinction')]
+E         
+E         At index 0 diff: ('Alice', 'Merit') != ('Alice', 'Distinction')
+E         
+E         Full diff:
+E           [
+E               (
+E                   'Alice',...
+E         
+E         ...Full output truncated (4 lines hidden), use '-vv' to show
+
+part2_tests/tests_iteration_0/test_student_grade_analysis.py:38: AssertionError</failure></testcase><testcase classname="part2_tests.tests_iteration_0.test_student_grade_analysis" name="test_student_grade_analysis_8" time="0.000"><failure message="AssertionError: assert [('Dave', 'Di...Bob', 'Pass')] == [('Dave', 'Di...ob', 'Merit')]&#10;  &#10;  At index 2 diff: ('Bob', 'Pass') != ('Bob', 'Merit')&#10;  &#10;  Full diff:&#10;    [&#10;        (&#10;            'Dave',...&#10;  &#10;  ...Full output truncated (12 lines hidden), use '-vv' to show">def test_student_grade_analysis_8():
+        students = [
+            ("Bob", 70, 80),    # Should be Merit, buggy → Pass
+            ("Charlie", 75, 85),# Merit, unaffected
+            ("Dave", 95, 80)    # Distinction, unaffected
+        ]
+        expected = [
+            ("Dave", "Distinction"),
+            ("Charlie", "Merit"),
+            ("Bob", "Merit")  # FAILS due to bug
+        ]
+&gt;       assert student_grade_analysis(students) == expected
+E       AssertionError: assert [('Dave', 'Di...Bob', 'Pass')] == [('Dave', 'Di...ob', 'Merit')]
+E         
+E         At index 2 diff: ('Bob', 'Pass') != ('Bob', 'Merit')
+E         
+E         Full diff:
+E           [
+E               (
+E                   'Dave',...
+E         
+E         ...Full output truncated (12 lines hidden), use '-vv' to show
+
+part2_tests/tests_iteration_0/test_student_grade_analysis.py:52: AssertionError</failure></testcase></testsuite></testsuites>

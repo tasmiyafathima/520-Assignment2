@@ -1,0 +1,70 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.13.7, pytest-8.4.2, pluggy-1.6.0 -- /Users/tasmiyafathima/Documents/exercise_2/venv/bin/python3.13
+cachedir: .pytest_cache
+rootdir: /Users/tasmiyafathima/Documents/exercise_2
+plugins: cov-7.0.0
+collecting ... collected 8 items
+
+part2_tests/tests_iteration_0/test_student_grade_analysis.py::test_student_grade_analysis_1 PASSED [ 12%]
+part2_tests/tests_iteration_0/test_student_grade_analysis.py::test_student_grade_analysis_2 PASSED [ 25%]
+part2_tests/tests_iteration_0/test_student_grade_analysis.py::test_student_grade_analysis_3 PASSED [ 37%]
+part2_tests/tests_iteration_0/test_student_grade_analysis.py::test_student_grade_analysis_4 PASSED [ 50%]
+part2_tests/tests_iteration_0/test_student_grade_analysis.py::test_student_grade_analysis_5 PASSED [ 62%]
+part2_tests/tests_iteration_0/test_student_grade_analysis.py::test_student_grade_analysis_6 PASSED [ 75%]
+part2_tests/tests_iteration_0/test_student_grade_analysis.py::test_student_grade_analysis_7 FAILED [ 87%]
+part2_tests/tests_iteration_0/test_student_grade_analysis.py::test_student_grade_analysis_8 FAILED [100%]
+
+=================================== FAILURES ===================================
+________________________ test_student_grade_analysis_7 _________________________
+
+    def test_student_grade_analysis_7():
+        students = [("Alice", 90, 80)]
+>       assert student_grade_analysis(students) == [("Alice", "Distinction")]  # FAILS
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: assert [('Alice', 'Merit')] == [('Alice', 'Distinction')]
+E         
+E         At index 0 diff: ('Alice', 'Merit') != ('Alice', 'Distinction')
+E         
+E         Full diff:
+E           [
+E               (
+E                   'Alice',...
+E         
+E         ...Full output truncated (4 lines hidden), use '-vv' to show
+
+part2_tests/tests_iteration_0/test_student_grade_analysis.py:38: AssertionError
+________________________ test_student_grade_analysis_8 _________________________
+
+    def test_student_grade_analysis_8():
+        students = [
+            ("Bob", 70, 80),    # Should be Merit, buggy → Pass
+            ("Charlie", 75, 85),# Merit, unaffected
+            ("Dave", 95, 80)    # Distinction, unaffected
+        ]
+        expected = [
+            ("Dave", "Distinction"),
+            ("Charlie", "Merit"),
+            ("Bob", "Merit")  # FAILS due to bug
+        ]
+>       assert student_grade_analysis(students) == expected
+E       AssertionError: assert [('Dave', 'Di...Bob', 'Pass')] == [('Dave', 'Di...ob', 'Merit')]
+E         
+E         At index 2 diff: ('Bob', 'Pass') != ('Bob', 'Merit')
+E         
+E         Full diff:
+E           [
+E               (
+E                   'Dave',...
+E         
+E         ...Full output truncated (12 lines hidden), use '-vv' to show
+
+part2_tests/tests_iteration_0/test_student_grade_analysis.py:52: AssertionError
+- generated xml file: /Users/tasmiyafathima/Documents/exercise_2/reports_part2/junit_all_iteration_0.xml -
+================================ tests coverage ================================
+_______________ coverage: platform darwin, python 3.13.7-final-0 _______________
+
+Coverage XML written to file reports_part2/coverage_all_iteration_0.xml
+=========================== short test summary info ============================
+FAILED part2_tests/tests_iteration_0/test_student_grade_analysis.py::test_student_grade_analysis_7
+FAILED part2_tests/tests_iteration_0/test_student_grade_analysis.py::test_student_grade_analysis_8
+========================= 2 failed, 6 passed in 0.04s ==========================

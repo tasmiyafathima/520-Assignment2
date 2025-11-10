@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="8" time="0.035" timestamp="2025-11-10T13:50:13.926687-05:00" hostname="Tasmiyas-MacBook-Pro.local"><testcase classname="part2_tests.tests_iteration_0.test_inventory_pricing_analysis" name="test_inventory_pricing_analysis_1" time="0.000" /><testcase classname="part2_tests.tests_iteration_0.test_inventory_pricing_analysis" name="test_inventory_pricing_analysis_2" time="0.000" /><testcase classname="part2_tests.tests_iteration_0.test_inventory_pricing_analysis" name="test_inventory_pricing_analysis_3" time="0.000" /><testcase classname="part2_tests.tests_iteration_0.test_inventory_pricing_analysis" name="test_inventory_pricing_analysis_4" time="0.000" /><testcase classname="part2_tests.tests_iteration_0.test_inventory_pricing_analysis" name="test_inventory_pricing_analysis_5" time="0.000" /><testcase classname="part2_tests.tests_iteration_0.test_inventory_pricing_analysis" name="test_inventory_pricing_analysis_6" time="0.000" /><testcase classname="part2_tests.tests_iteration_0.test_inventory_pricing_analysis" name="test_inventory_pricing_analysis_7" time="0.001"><failure message="AssertionError: assert [('ItemE', 'D..., 'Discount')] == [('ItemE', 'S..., 'Standard')]&#10;  &#10;  At index 0 diff: ('ItemE', 'Discount') != ('ItemE', 'Standard')&#10;  &#10;  Full diff:&#10;    [&#10;        (&#10;            'ItemE',...&#10;  &#10;  ...Full output truncated (9 lines hidden), use '-vv' to show">def test_inventory_pricing_analysis_7():  # price=50 boundary
+        items = [
+            ("ItemE", 5, 50),
+            ("ItemF", 5, 50),
+            ("ItemG", 0, 120)
+        ]
+&gt;       assert inventory_pricing_analysis(items) == [
+            ("ItemE", "Standard"),  # This will fail due to the bug
+            ("ItemF", "Standard")
+        ]
+E       AssertionError: assert [('ItemE', 'D..., 'Discount')] == [('ItemE', 'S..., 'Standard')]
+E         
+E         At index 0 diff: ('ItemE', 'Discount') != ('ItemE', 'Standard')
+E         
+E         Full diff:
+E           [
+E               (
+E                   'ItemE',...
+E         
+E         ...Full output truncated (9 lines hidden), use '-vv' to show
+
+part2_tests/tests_iteration_0/test_inventory_pricing_analysis.py:79: AssertionError</failure></testcase><testcase classname="part2_tests.tests_iteration_0.test_inventory_pricing_analysis" name="test_inventory_pricing_analysis_8" time="0.000"><failure message="AssertionError: assert [('ItemH', 'D..., 'Discount')] == [('ItemH', 'S..., 'Standard')]&#10;  &#10;  At index 0 diff: ('ItemH', 'Discount') != ('ItemH', 'Standard')&#10;  &#10;  Full diff:&#10;    [&#10;        (&#10;            'ItemH',...&#10;  &#10;  ...Full output truncated (9 lines hidden), use '-vv' to show">def test_inventory_pricing_analysis_8():
+        items = [
+            ("ItemH", 3, 50),
+            ("ItemI", 2, 50),
+            ("ItemJ", 0, 150)
+        ]
+&gt;       assert inventory_pricing_analysis(items) == [
+            ("ItemH", "Standard"),  # This will fail due to the bug
+            ("ItemI", "Standard")
+        ]
+E       AssertionError: assert [('ItemH', 'D..., 'Discount')] == [('ItemH', 'S..., 'Standard')]
+E         
+E         At index 0 diff: ('ItemH', 'Discount') != ('ItemH', 'Standard')
+E         
+E         Full diff:
+E           [
+E               (
+E                   'ItemH',...
+E         
+E         ...Full output truncated (9 lines hidden), use '-vv' to show
+
+part2_tests/tests_iteration_0/test_inventory_pricing_analysis.py:90: AssertionError</failure></testcase></testsuite></testsuites>

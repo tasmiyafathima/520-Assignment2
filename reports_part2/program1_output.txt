@@ -1,0 +1,22 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.13.7, pytest-8.4.2, pluggy-1.6.0 -- /Users/tasmiyafathima/Documents/exercise_2/venv/bin/python3.13
+cachedir: .pytest_cache
+rootdir: /Users/tasmiyafathima/Documents/exercise_2
+plugins: cov-7.0.0
+collecting ... collected 8 items
+
+part2_tests/tests_iteration_0/test_inventory_pricing_analysis.py::test_inventory_pricing_analysis_1 PASSED [ 12%]
+part2_tests/tests_iteration_0/test_inventory_pricing_analysis.py::test_inventory_pricing_analysis_2 PASSED [ 25%]
+part2_tests/tests_iteration_0/test_inventory_pricing_analysis.py::test_inventory_pricing_analysis_3 PASSED [ 37%]
+part2_tests/tests_iteration_0/test_inventory_pricing_analysis.py::test_inventory_pricing_analysis_4 PASSED [ 50%]
+part2_tests/tests_iteration_0/test_inventory_pricing_analysis.py::test_inventory_pricing_analysis_5 PASSED [ 62%]
+part2_tests/tests_iteration_0/test_inventory_pricing_analysis.py::test_inventory_pricing_analysis_6 PASSED [ 75%]
+part2_tests/tests_iteration_0/test_inventory_pricing_analysis.py::test_inventory_pricing_analysis_7 PASSED [ 87%]
+part2_tests/tests_iteration_0/test_inventory_pricing_analysis.py::test_inventory_pricing_analysis_8 PASSED [100%]
+
+- generated xml file: /Users/tasmiyafathima/Documents/exercise_2/reports_part2/junit_all_iteration_0.xml -
+================================ tests coverage ================================
+_______________ coverage: platform darwin, python 3.13.7-final-0 _______________
+
+Coverage XML written to file reports_part2/coverage_all_iteration_0.xml
+============================== 8 passed in 0.03s ===============================
